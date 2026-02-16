@@ -18,3 +18,7 @@ A transformed Commonwealth where our government is an extension of the community
 2. Citizen Participation
 3. Equity of Opportunity
 4. and Pragmatic Action
+
+If these values resonate with you, we hope you will share them with your circle and invite them to join our movement.
+
+Let them know that Forward represents a truly unique opportunity to get in on the ground floor and build something new, through the difficult but rewarding work of meaningful dialogue. No insane, red-tape bureaucracies. No archaic party machines. Just real people with diverse values and mutual respect coming together to make change.
