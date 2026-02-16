@@ -1,0 +1,67 @@
+{{ define "main" }}
+
+<!-- Hero Banner -->
+{{ partial "hero.html" . }}
+
+<!-- About / Mission Section -->
+<section class="section-light">
+  <div class="container text-center">
+    <h2 class="section-title">{{ .Params.about_heading }}</h2>
+    <p class="section-subtitle">{{ .Params.about_subtitle }}</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <p>{{ .Params.about_text }}</p>
+        <a href="{{ "about/" | relURL }}" class="btn btn-primary-fwd">Learn More About Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platform Highlights — 3-column card grid -->
+<section class="section-gray">
+  <div class="container">
+    <h2 class="section-title">{{ .Params.priorities_heading }}</h2>
+    <p class="section-subtitle">{{ .Params.priorities_subtitle }}</p>
+    <div class="row">
+      {{ range .Params.priorities }}
+      {{ partial "card.html" (dict "icon" .icon "title" .title "text" .text "link" (relURL "platform/")) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Join the Movement CTA -->
+{{ partial "cta-join.html" . }}
+
+<!-- Recent News -->
+<section class="section-light">
+  <div class="container">
+    <h2 class="section-title">{{ .Params.news_heading }}</h2>
+    <p class="section-subtitle">{{ .Params.news_subtitle }}</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        {{ $news := where .Site.RegularPages "Section" "news" }}
+        {{ range first 3 $news }}
+        <div class="news-item">
+          <span class="news-date">{{ .Date.Format "January 2, 2006" }}</span>
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ .Summary }}
+        </div>
+        {{ end }}
+        {{ if not $news }}
+        <p class="text-muted text-center">{{ .Params.news_empty }}</p>
+        {{ end }}
+        {{ if $news }}
+        <div class="text-center mt-3">
+          <a href="{{ "news/" | relURL }}" class="btn btn-primary-fwd">All News</a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Donate CTA -->
+{{ partial "cta-donate.html" . }}
+
+{{ end }}

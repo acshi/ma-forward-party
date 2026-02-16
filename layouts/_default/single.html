@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "cta-join.html" . }}
+
+{{ end }}

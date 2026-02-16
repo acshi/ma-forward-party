@@ -1,0 +1,68 @@
+baseURL = "https://acshi.github.io/ma-forward-party/"
+languageCode = "en-us"
+title = "Massachusetts Forward Party"
+
+# Hugo build settings
+enableRobotsTXT = false
+enableEmoji = false
+
+[params]
+  description = "The mission of the Massachusetts Forward Party is to build an open and fair government that puts everyday people - not politics - first."
+  tagline = "Not left. Not right. Forward."
+
+  # NationBuilder link-out URLs (national party infrastructure)
+  joinURL = "https://home.forwardparty.com/massachusetts"
+  donateURL = "https://home.forwardparty.com/donate_massachusetts"
+  eventsURL = "https://home.forwardparty.com/ma_event_calendar"
+  volunteerURL = "https://home.forwardparty.com/massachusetts_hub"
+  candidateURL = "https://home.forwardparty.com/ma_candidate_application"
+
+  # Social media links
+  facebookURL = ""
+  twitterURL = ""
+  instagramURL = ""
+
+  # Hero section
+  heroCTA = "Join the Movement"
+
+  # "Join the Movement" CTA (appears on most pages)
+  joinHeading = "Join the Movement"
+  joinText = "Be part of building something new in Massachusetts. Sign up to stay informed, connect with like-minded voters, and help grow the Forward Party in the Commonwealth."
+  joinCTA = "Sign Up Today"
+
+  # "Donate" CTA (appears on homepage)
+  donateHeading = "Support Our Work"
+  donateText = "Your contribution helps us organize across Massachusetts, recruit forward-thinking candidates, and build a viable alternative to partisan politics."
+  donateCTA = "Donate Now"
+
+  # Footer
+  footerDisclaimer = "Paid for by the Massachusetts Forward Party. Not authorized by any candidate or candidate's committee."
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Platform"
+    url = "/platform/"
+    weight = 2
+  [[menu.main]]
+    name = "Get Involved"
+    url = "/get-involved/"
+    weight = 3
+  [[menu.main]]
+    name = "Events"
+    url = "https://home.forwardparty.com/ma_event_calendar"
+    weight = 4
+    [menu.main.params]
+      external = true
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,46 @@
+<footer class="footer-fwd">
+  <div class="container">
+    <div class="row">
+
+      <!-- Column 1: About -->
+      <div class="col-md-4 mb-4">
+        <h5>{{ .Site.Title }}</h5>
+        <p>{{ .Site.Params.description }}</p>
+        <div class="footer-social">
+          {{ with .Site.Params.facebookURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook-square"></i></a>{{ end }}
+          {{ with .Site.Params.twitterURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa fa-twitter-square"></i></a>{{ end }}
+          {{ with .Site.Params.instagramURL }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>{{ end }}
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links (auto-generated from main menu) -->
+      <div class="col-md-4 mb-4">
+        <h5>Quick Links</h5>
+        <ul>
+          {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <!-- Column 3: Take Action -->
+      <div class="col-md-4 mb-4">
+        <h5>Take Action</h5>
+        <ul>
+          <li><a href="{{ .Site.Params.joinURL }}" target="_blank" rel="noopener noreferrer">{{ .Site.Params.joinHeading }}</a></li>
+          <li><a href="{{ .Site.Params.donateURL }}" target="_blank" rel="noopener noreferrer">Donate</a></li>
+          <li><a href="{{ .Site.Params.eventsURL }}" target="_blank" rel="noopener noreferrer">Events</a></li>
+          <li><a href="{{ .Site.Params.volunteerURL }}" target="_blank" rel="noopener noreferrer">Volunteer</a></li>
+          <li><a href="{{ .Site.Params.candidateURL }}" target="_blank" rel="noopener noreferrer">Run for Office</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom text-center">
+      <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+      <p>{{ .Site.Params.footerDisclaimer }}</p>
+    </div>
+  </div>
+</footer>

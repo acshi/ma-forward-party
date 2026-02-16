@@ -1,0 +1,39 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.description }}
+    <p>{{ . }}</p>
+    {{ end }}
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        {{ .Content }}
+
+        {{ range .Pages.ByDate.Reverse }}
+        <div class="news-item">
+          <span class="news-date">{{ .Date.Format "January 2, 2006" }}</span>
+          <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ with .Params.description }}
+          <p>{{ . }}</p>
+          {{ end }}
+          {{ .Summary }}
+        </div>
+        {{ end }}
+
+        {{ if not .Pages }}
+        <p class="text-muted">No posts yet. Check back soon for updates from the Massachusetts Forward Party.</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ partial "cta-join.html" . }}
+
+{{ end }}

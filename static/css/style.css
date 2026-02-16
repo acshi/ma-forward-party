@@ -1,0 +1,549 @@
+/* ==========================================================================
+   Massachusetts Forward Party — Forward Party Brand Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS Custom Properties (Forward Party brand palette)
+
+   Extracted from forwardparty.com:
+   - Purple (#470D67) is the primary brand color
+   - Dark navy (#182742) is the secondary dark
+   - Cyan (#59D7EE) is the bright accent used for buttons and highlights
+   - Red (#CC3829) is the warm CTA accent
+   - The signature gradient sweeps navy → purple → red → orange (left to right)
+   -------------------------------------------------------------------------- */
+:root {
+  --purple:    #470D67;
+  --navy:      #182742;
+  --cyan:      #59D7EE;
+  --red:       #CC3829;
+  --orange:    #FF8200;
+  --text:      #212529;
+  --bg:        #fff;
+  --bg-light:  #F3FAFA;
+  --gray:      #A9A9A5;
+
+  /* The Forward Party signature gradient: a dark navy → purple → red → orange
+     sweep, as seen on the NationBuilder state pages (home.forwardparty.com). */
+  --gradient-brand: linear-gradient(
+    to right,
+    var(--navy) 0%,
+    var(--purple) 35%,
+    var(--red) 75%,
+    var(--orange) 100%
+  );
+
+  /* The same sweep used for large section backgrounds — uses a radial variant
+     so the purple core sits center-left and the warm edge bleeds right. */
+  --gradient-dark: linear-gradient(
+    to right,
+    var(--navy) 0%,
+    var(--purple) 40%,
+    #9B2335 75%,
+    var(--red) 100%
+  );
+}
+
+/* --------------------------------------------------------------------------
+   Base Typography
+   -------------------------------------------------------------------------- */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "League Gothic", sans-serif;
+  text-transform: uppercase;
+  color: var(--purple);
+}
+
+a {
+  color: var(--purple);
+}
+
+a:hover {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   The signature Forward gradient bar — a thin strip used as a decorative
+   divider beneath the nav and above the footer.
+   -------------------------------------------------------------------------- */
+.gradient-bar {
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+/* --------------------------------------------------------------------------
+   Navigation
+   -------------------------------------------------------------------------- */
+.navbar-fwd {
+  background-color: #fff;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-fwd .navbar-brand {
+  color: var(--purple);
+  font-family: "League Gothic", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-fwd .navbar-brand:hover {
+  color: var(--navy);
+}
+
+.navbar-fwd .nav-link {
+  color: var(--text);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.2s;
+}
+
+.navbar-fwd .nav-link:hover,
+.navbar-fwd .nav-link:focus {
+  color: var(--purple);
+}
+
+.navbar-fwd .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-fwd .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Donate button in nav — red accent stands out against the white bar */
+.btn-donate-nav {
+  background-color: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 1.2rem;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.btn-donate-nav:hover {
+  background-color: #a32e22;
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  background: var(--gradient-dark);
+  color: #fff;
+  padding: 6rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* A subtle gradient accent along the bottom edge of the hero */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+.hero-section h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p.lead {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.btn-hero {
+  background-color: var(--cyan);
+  color: var(--navy);
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-hero:hover {
+  background-color: #fff;
+  color: var(--purple);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Content Sections
+   -------------------------------------------------------------------------- */
+.section-light {
+  padding: 4rem 0;
+  background-color: var(--bg);
+}
+
+.section-gray {
+  padding: 4rem 0;
+  background-color: var(--bg-light);
+}
+
+.section-purple {
+  padding: 4rem 0;
+  background: var(--gradient-dark);
+  color: #fff;
+}
+
+.section-purple h2 {
+  color: #fff;
+}
+
+.section-gradient {
+  padding: 4rem 0;
+  background: var(--gradient-dark);
+  color: #fff;
+}
+
+.section-gradient h2 {
+  color: #fff;
+}
+
+.section-red {
+  padding: 4rem 0;
+  background-color: var(--red);
+  color: #fff;
+}
+
+.section-red h2 {
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.15rem;
+  color: var(--gray);
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Override subtitle color on dark backgrounds */
+.section-purple .section-subtitle,
+.section-gradient .section-subtitle,
+.section-red .section-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --------------------------------------------------------------------------
+   Cards (platform highlights, news previews)
+   -------------------------------------------------------------------------- */
+.card-fwd {
+  border: none;
+  border-radius: 8px;
+  background: #fff;
+  padding: 2rem;
+  height: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  /* Gradient top border via a pseudo-element, giving each card a branded accent */
+  position: relative;
+  overflow: hidden;
+}
+
+.card-fwd::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+.card-fwd:hover {
+  box-shadow: 0 6px 20px rgba(71, 13, 103, 0.15);
+  transform: translateY(-2px);
+}
+
+.card-fwd h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-fwd .card-icon {
+  font-size: 2.5rem;
+  color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn-primary-fwd {
+  background-color: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-primary-fwd:hover {
+  background-color: var(--navy);
+  color: #fff;
+}
+
+.btn-secondary-fwd {
+  background-color: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary-fwd:hover {
+  background-color: #a32e22;
+  color: #fff;
+}
+
+.btn-cyan-fwd {
+  background-color: var(--cyan);
+  color: var(--navy);
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.btn-cyan-fwd:hover {
+  background-color: #3cc8e0;
+  color: var(--navy);
+}
+
+.btn-outline-light-fwd {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-outline-light-fwd:hover {
+  background-color: #fff;
+  color: var(--purple);
+}
+
+.btn-lg-fwd {
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Call-to-Action Sections
+   -------------------------------------------------------------------------- */
+.cta-section {
+  text-align: center;
+}
+
+.cta-section h2 {
+  margin-bottom: 1rem;
+}
+
+.cta-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+.footer-fwd {
+  background-color: var(--navy);
+  color: rgba(255, 255, 255, 0.75);
+  padding: 3rem 0 1.5rem;
+}
+
+.footer-fwd h5 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-fwd a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.2s;
+}
+
+.footer-fwd a:hover {
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+.footer-fwd ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-fwd ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-social a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin-bottom: 0.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Page Content (single pages like About, Platform)
+   -------------------------------------------------------------------------- */
+.page-header {
+  background: var(--gradient-dark);
+  color: #fff;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+}
+
+/* Gradient accent bar at bottom of page headers */
+.page-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-brand);
+}
+
+.page-header h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.page-content {
+  padding: 3rem 0;
+}
+
+.page-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page-content p {
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.page-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   News List
+   -------------------------------------------------------------------------- */
+.news-item {
+  border-bottom: 1px solid #dee2e6;
+  padding: 1.5rem 0;
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+.news-item h3 a {
+  color: var(--purple);
+}
+
+.news-item h3 a:hover {
+  color: var(--cyan);
+}
+
+.news-date {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section p.lead {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-light,
+  .section-gray,
+  .section-purple,
+  .section-gradient,
+  .section-red {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .card-fwd {
+    padding: 1.5rem;
+  }
+}

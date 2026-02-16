@@ -1,0 +1,22 @@
+{{/* Reusable card component.
+     Parameters (passed via dict):
+       .icon    — Font Awesome class (e.g. "fa-check-circle")
+       .title   — Card heading
+       .text    — Card body text
+       .link    — Optional URL for a "Learn More" link
+       .linkText — Optional link label (defaults to "Learn More")
+*/}}
+<div class="col-md-4 mb-4">
+  <div class="card-fwd">
+    {{ with .icon }}
+    <div class="card-icon">
+      <i class="fa {{ . }}"></i>
+    </div>
+    {{ end }}
+    <h3>{{ .title }}</h3>
+    <p>{{ .text }}</p>
+    {{ with .link }}
+    <a href="{{ . }}" class="btn btn-primary-fwd btn-sm">{{ $.linkText | default "Learn More" }}</a>
+    {{ end }}
+  </div>
+</div>
