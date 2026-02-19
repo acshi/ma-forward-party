@@ -28,14 +28,6 @@ All CRM actions are link-outs that open in a new tab.
 
 All configured centrally in `config.toml` under `[params]`:
 
-| Action         | URL                                                |
-|----------------|----------------------------------------------------|
-| Join / Sign Up | `home.forwardparty.com/massachusetts`              |
-| Donate         | `home.forwardparty.com/donate_massachusetts`       |
-| Events         | `home.forwardparty.com/ma_event_calendar`          |
-| Volunteer      | `home.forwardparty.com/massachusetts_hub`          |
-| Run for Office | `home.forwardparty.com/ma_candidate_application`   |
-
 ## Design System — Forward Party Brand Colors
 
 Colors extracted from `forwardparty.com` and `home.forwardparty.com/massachusetts`:

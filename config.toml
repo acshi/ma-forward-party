@@ -12,7 +12,7 @@ enableEmoji = false
 
   # NationBuilder link-out URLs (national party infrastructure)
   joinURL = "https://home.forwardparty.com/massachusetts"
-  donateURL = "https://home.forwardparty.com/donate_massachusetts"
+  donateURL = "https://smartchange.app/donate/massa-0q"
   eventsURL = "https://home.forwardparty.com/ma_event_calendar"
   volunteerURL = "https://home.forwardparty.com/massachusetts_hub"
   candidateURL = "https://home.forwardparty.com/ma_candidate_application"
